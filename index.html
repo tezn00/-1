@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<!-- saved from url=(0050)http://localhost:64476/ZQ2XUDBB~1cnw3j1/index.html -->
-<html style="height: 100vh;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 		<title></title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 		<meta property="og:title" content="">
 		<meta property="og:description" content="">
-		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="mobile-web-app-capable" content="yes" />
 		<meta property="og:image" content="preview.jpg">
 		<style type="text/css" title="Default">
 			/* fullscreen */
@@ -33,75 +33,14 @@
 				background-color:  rgba(255,255,255,0.5);
 			}
 		</style>
-	<script>
-/* script for auto update */
-var ggWebSocket;
-
-function ggCreateWebSocket() {
-	try {
-		const isHttps=location.protocol !== 'https:';
-		const wsUrl=(isHttps?'ws://':'wss://') + window.location.hostname + (window.location.port?(':' + window.location.port):"");
-		console.log("Connect to: " + wsUrl);
-		ggWebSocket=new WebSocket(wsUrl);
-		ggWebSocket.addEventListener('open', function (event) {
-			ggWebSocket.send(JSON.stringify({ action: 'register', folder:'ZQ2XUDBB', url: Location.href }));
-		});
-		ggWebSocket.addEventListener('close', function (event) {
-		});
-		ggWebSocket.addEventListener('message', function (event) {
-			let msg=JSON.parse(event.data);
-			if (msg) {
-				switch (msg.action) {
-					case 'reload': {
-						try {
-							localStorage.setItem('p2vrState', JSON.stringify(pano.getPlayerState()));
-						} catch(e) {
-							console.log(e);
-						}
-						setTimeout(() => { location.reload(); },0);
-						ggWebSocket.send(JSON.stringify({ status: 'ok' }));
-						break;
-					};
-					case 'goto': {
-						console.log(msg.url);
-						setTimeout(() => { location.assign(msg.url); },0);
-						ggWebSocket.send(JSON.stringify({ status: 'ok' }));
-						break;
-					};
-				};
-			};
-		});
-	} catch(e) {
-		console.log(e);
-	}
-}
-	
-window.addEventListener("load", (event) => {
-	ggCreateWebSocket();
-	try {
-		let state=JSON.parse(localStorage.getItem('p2vrState'));
-		localStorage.removeItem('p2vrState');
-		if (state) {
-			if (state.currentNode) {
-				pano.startNode=state.currentNode;
-			}
-			pano.on("configloaded",function() {
-				pano.setPlayerState(state);
-			});
-		}
-	} catch(e) {
-		console.log(e);
-	}
-});
-
-
-</script>
-</head>
+	</head>
 	<body>
 <!-- - - - - - - 8<- - - - - - cut here - - - - - 8<- - - - - - - -->
-		<script type="text/javascript" src="./index_files/pano2vr_player.js.下载">
+		<script type="text/javascript" src="pano2vr_player.js?ts=73269716">
 		</script>
-		<div id="container" style="width: 100%; height: 802px; overflow: hidden;"><div id="viewport" role="application" style="top: 0px; left: 0px; position: relative; perspective: none; touch-action: none; text-align: left; user-select: none; z-index: auto;"><div id="viewer" style="top: 0px; left: 0px; width: 1488px; height: 802px; overflow: hidden; position: absolute; touch-action: none; user-select: none;"><canvas width="2976" height="1604" style="width: 1488px; height: 802px; display: inline; touch-action: none; position: absolute;"></canvas></div><div id="hotspots" style="top: 0px; left: 0px; width: 1488px; height: 802px; overflow: hidden; position: absolute; user-select: none; z-index: 4; cursor: default;"><div style="position: absolute; user-select: none; left: -619.651px; top: 429.241px; transition: none; visibility: visible;"><img style="position: absolute; width: 47px; height: 47px; top: -23.5px; left: -23.5px; cursor: pointer; user-select: none; max-width: none;" src="./index_files/2.png"></div><div style="position: absolute; user-select: none; left: -1000px; top: -1000px; transition: none; visibility: hidden;"><img style="position: absolute; width: 85px; height: 85px; top: -42.5px; left: -42.5px; cursor: pointer; user-select: none; max-width: none;" src="./index_files/image.png"></div><div style="position: absolute; user-select: none; left: -617.969px; top: 329.342px; transition: none; visibility: visible;"><img style="position: absolute; width: 49px; height: 49px; top: -24.5px; left: -24.5px; cursor: pointer; user-select: none; max-width: none;" src="./index_files/2-1.png"></div><div style="position: absolute; user-select: none; left: -617.296px; top: 224.534px; transition: none; visibility: visible;"><img style="position: absolute; width: 45px; height: 45px; top: -22.5px; left: -22.5px; cursor: pointer; user-select: none; max-width: none;" src="./index_files/2-1.png"></div><div style="position: absolute; user-select: none; left: -624.353px; top: 521.317px; transition: none; visibility: visible;"><img style="position: absolute; width: 44px; height: 44px; top: -22px; left: -22px; cursor: pointer; user-select: none; max-width: none;" src="./index_files/2.png"></div><div style="position: absolute; user-select: none; left: -610.675px; top: 125.296px; transition: none; visibility: visible;"><img style="position: absolute; width: 44px; height: 44px; top: -22px; left: -22px; cursor: pointer; user-select: none; max-width: none;" src="./index_files/2.png"></div><div style="position: absolute; user-select: none; left: -610.487px; top: 24.8808px; transition: none; visibility: visible;"><img style="position: absolute; width: 45px; height: 45px; top: -22.5px; left: -22.5px; cursor: pointer; user-select: none; max-width: none;" src="./index_files/2-1.png"></div><div style="position: absolute; user-select: none; left: -1000px; top: -1000px; transition: none; visibility: hidden;"><img style="position: absolute; width: 79px; height: 79px; top: -39.5px; left: -39.5px; cursor: pointer; user-select: none; max-width: none;" src="./index_files/image.png"></div><div style="position: absolute; user-select: none; left: 2603.52px; top: 311.801px; transition: none; visibility: visible;"><img style="position: absolute; width: 43px; height: 43px; top: -21.5px; left: -21.5px; cursor: pointer; user-select: none; max-width: none;" src="./index_files/前进2.png"></div><div style="position: absolute; user-select: none; left: 2607.22px; top: 167.918px; transition: none; visibility: visible;"><img style="position: absolute; width: 47px; height: 47px; top: -23.5px; left: -23.5px; cursor: pointer; user-select: none; max-width: none;" src="./index_files/2.png"></div><div style="position: absolute; user-select: none; left: 2594.64px; top: 41.4347px; transition: none; visibility: visible;"><img style="position: absolute; width: 46px; height: 46px; top: -23px; left: -23px; cursor: pointer; user-select: none; max-width: none;" src="./index_files/2.png"></div><div style="position: absolute; user-select: none; left: 2594.41px; top: -88.8165px; transition: none; visibility: visible;"><img style="position: absolute; width: 45px; height: 45px; top: -22.5px; left: -22.5px; cursor: pointer; user-select: none; max-width: none;" src="./index_files/2.png"></div></div><div id="hotspottext" style="top: 0px; left: 0px; position: absolute; padding: 3px; visibility: hidden; z-index: 5;" class="ggskin ggdefaulthotspot"></div></div></div>
+		<div id="container" style="width:100%;height:100%;overflow:hidden;">
+		<br>Loading...<br><br>
+		</div>
 		<script type="text/javascript">
 		function parseParams(paramsString, params) {
 			paramsString = paramsString.substring(1);
@@ -148,10 +87,10 @@ window.addEventListener("load", (event) => {
 			pano=new pano2vrPlayer("container");
 			pano.startNode = startNode;
 			pano.startView = startView;
-			pano.setQueryParameter("ts=72730295")
+			pano.setQueryParameter("ts=73269716")
 			// load the configuration
 			window.addEventListener("load", function() {
-				pano.readConfigUrlAsync("pano.xml?ts=72730295");
+				pano.readConfigUrlAsync("pano.xml?ts=73269716");
 			});
 			if (window.navigator.userAgent.match(/Safari/i)) {
 				// fix for white borders, rotation on iPhone
@@ -183,6 +122,5 @@ window.addEventListener("load", (event) => {
 			<p><b>Please enable Javascript!</b></p>
 		</noscript>
 <!-- - - - - - - 8<- - - - - - cut here - - - - - 8<- - - - - - - -->
-	
-
-</body></html>
+	</body>
+</html>
